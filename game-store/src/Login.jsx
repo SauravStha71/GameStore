@@ -10,7 +10,7 @@ export default function Login() {
           className="text-[30px] font-semibold text-white mb-6 text-center"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
-          Sign in to GG Store
+          Sign In to GG Store
         </h1>
 
         {/* First Rectangle */}
@@ -50,14 +50,14 @@ export default function Login() {
           </h2>
 
           <div className="flex flex-col gap-3 w-full">
-            <button className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
-              Sign in with Google
+            <button className="w-full bg-[#242424] hover:bg-green-700 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
+              Google
             </button>
-            <button className="w-full bg-black hover:bg-gray-800 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
-              Sign in with Apple
+            <button className="w-full bg-[#242424] hover:bg-black text-white py-2 rounded font-semibold border border-[#d2d2d2]">
+              Apple
             </button>
-            <button className="w-full bg-blue-800 hover:bg-blue-900 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
-              Sign in with Facebook
+            <button className="w-full bg-[#242424] hover:bg-blue-900 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
+              Facebook
             </button>
           </div>
         </div>
