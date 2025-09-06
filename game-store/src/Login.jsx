@@ -2,21 +2,21 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#121212]">
-      <div className="w-[90%] max-w-[500px] min-h-[700px] bg-[#1e1e1e] rounded-[25px] border border-[#d2d2d2] flex flex-col items-center p-6">
+    <div className="flex items-center justify-center min-h-screen bg-[#121212] px-4">
+      <div className="w-full max-w-[500px] bg-[#1e1e1e] rounded-2xl border border-[#d2d2d2] flex flex-col items-center p-4 sm:p-6 md:p-8">
         
         {/* Title */}
         <h1
-          className="text-[30px] font-semibold text-white mb-6 text-center"
+          className="text-2xl sm:text-3xl font-semibold text-white mb-6 text-center"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           Sign In to GG Store
         </h1>
 
         {/* First Rectangle */}
-        <div className="w-[90%] max-w-[400px] h-[257px] bg-[#181818] rounded-[15px] border border-[#d2d2d2] flex flex-col justify-center p-6 mb-6">
+        <div className="w-full bg-[#181818] rounded-xl border border-[#d2d2d2] flex flex-col justify-center p-4 sm:p-6 mb-6">
           <label
-            className="text-[17px] text-white mb-2"
+            className="text-base sm:text-lg text-white mb-2"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             Sign In with username or email
@@ -26,7 +26,7 @@ export default function Login() {
             className="w-full mb-4 p-2 rounded bg-[#242424] border border-[#d2d2d2] text-white"
           />
           <label
-            className="text-[17px] text-white mb-2"
+            className="text-base sm:text-lg text-white mb-2"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             Password
@@ -41,9 +41,9 @@ export default function Login() {
         </div>
 
         {/* Second Rectangle */}
-              <div className="w-[90%] max-w-[400px] h-[257px] bg-[#181818] rounded-[15px] border border-[#d2d2d2] flex flex-col items-center justify-center p-6">
+        <div className="w-full bg-[#181818] rounded-xl border border-[#d2d2d2] flex flex-col items-center justify-center p-4 sm:p-6">
           <h2
-            className="text-[17px] text-white mb-4"
+            className="text-base sm:text-lg text-white mb-4"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             Other ways to sign in
