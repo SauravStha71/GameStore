@@ -1,4 +1,7 @@
 import React from "react";
+import { FaCog } from "react-icons/fa";
+import { FaFacebook, FaApple } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 export default function Login() {
   return (
@@ -48,18 +51,43 @@ export default function Login() {
           >
             Other ways to sign in
           </h2>
+<div className="flex flex-col gap-3 w-full">
+  {/* Google */}
+  <button className="w-full flex items-center justify-between bg-[#242424] hover:bg-green-700 text-white py-2 px-4 rounded font-semibold border border-[#d2d2d2]">
+    <div className="w-6 flex justify-start">
+      <FcGoogle size={20} />
+    </div>
+    <span className="flex-1 text-center">Google</span>
+    <div className="w-6" /> {/* Spacer to balance layout */}
+  </button>
 
-          <div className="flex flex-col gap-3 w-full">
-            <button className="w-full bg-[#242424] hover:bg-green-700 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
-              Google
-            </button>
-            <button className="w-full bg-[#242424] hover:bg-black text-white py-2 rounded font-semibold border border-[#d2d2d2]">
-              Apple
-            </button>
-            <button className="w-full bg-[#242424] hover:bg-blue-900 text-white py-2 rounded font-semibold border border-[#d2d2d2]">
-              Facebook
-            </button>
-          </div>
+  {/* Apple */}
+  <button className="w-full flex items-center justify-between bg-[#242424] hover:bg-black text-white py-2 px-4 rounded font-semibold border border-[#d2d2d2]">
+    <div className="w-6 flex justify-start">
+      <FaApple size={20} />
+    </div>
+    <span className="flex-1 text-center">Apple</span>
+    <div className="w-6" />
+  </button>
+
+  {/* Facebook */}
+  <button className="w-full flex items-center justify-between bg-[#242424] hover:bg-blue-900 text-white py-2 px-4 rounded font-semibold border border-[#d2d2d2]">
+    <div className="w-6 flex justify-start">
+      <FaFacebook size={20} className="text-blue-600" />
+    </div>
+    <span className="flex-1 text-center">Facebook</span>
+    <div className="w-6" />
+  </button>
+</div>
+
+        <div className="absolute bottom-4 left-4">
+          <button
+            title="Settings"
+            className="p-2 rounded-full bg-[#242424] hover:bg-[#333] text-white border border-[#d2d2d2] transition duration-200"
+          >
+            <FaCog size={20} />
+          </button>
+        </div>
         </div>
       </div>
     </div>
