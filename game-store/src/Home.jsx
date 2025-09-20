@@ -1,23 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 
-// Import local webp images
+// Featured games images (new versions)
+import cyberpunk1 from "./assets/cyberpunk1.webp";
+import fc26 from "./assets/fc26.webp";
+import valorant1 from "./assets/valorant1.webp";
+
+// Popular games images (original)
 import cyberpunk from "./assets/cyberpunk.webp";
 import rocketleague from "./assets/rocketleague.webp";
 import valorant from "./assets/valorant.webp";
 import sekiro from "./assets/sekiro.webp";
 import sifu from "./assets/sifu.webp";
-import fc26 from "./assets/fc26.webp";
 import skate from "./assets/skate.webp";
 import cs2 from "./assets/cs2.webp";
 
 const featuredGames = [
-  { id: 1, name: "Cyberpunk 2077", img: cyberpunk, price: "$59.99" },
-  { id: 2, name: "Rocket League", img: rocketleague, price: "Free" },
-  { id: 3, name: "Valorant", img: valorant, price: "Free" },
+  { id: 1, name: "Cyberpunk 2077", img: cyberpunk1, price: "$59.99" },
+  { id: 2, name: "EA SPORTS FC 26", img: fc26, price: "$69.99" },
+  { id: 3, name: "Valorant", img: valorant1, price: "Free" },
 ];
 
-const games = [
+const popularGames = [
   { id: 1, name: "Cyberpunk 2077", price: "$59.99", img: cyberpunk },
   { id: 2, name: "Rocket League", price: "Free", img: rocketleague },
   { id: 3, name: "Valorant", price: "Free", img: valorant },
@@ -46,8 +50,8 @@ export default function Home() {
     <div className="min-h-screen bg-gray-900 text-white font-sans">
 
       {/* Header */}
-      <header className="flex justify-between items-center p-6 bg-gray-800 shadow-md relative">
-        <h1 className="text-2xl font-bold">GG Store</h1>
+      <header className="flex justify-between items-center p-4 md:p-6 bg-gray-800 shadow-md relative">
+        <h1 className="text-xl md:text-2xl font-bold">GG Store</h1>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex gap-6">
@@ -87,7 +91,7 @@ export default function Home() {
         </nav>
       </div>
 
-      {/* Carousel */}
+      {/* Featured Games Carousel */}
       <section className="relative overflow-hidden h-[400px] md:h-[500px]">
         {featuredGames.map((game, index) => (
           <div
@@ -107,7 +111,7 @@ export default function Home() {
           </div>
         ))}
 
-        {/* Navigation Arrows */}
+        {/* Carousel Arrows */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition"
@@ -122,27 +126,26 @@ export default function Home() {
         </button>
       </section>
 
-        {/* Popular Games */}
-    <section className="p-6 md:p-12">
-    <h3 className="text-3xl font-bold mb-6 text-center">Popular Games</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {games.map(game => (
-        <div key={game.id} className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg hover:scale-105 transform transition">
-            {/* Flexible image container */}
-            <div className="w-full h-48 md:h-56 flex items-center justify-center bg-gray-800">
-            <img src={game.img} alt={game.name} className="max-h-full max-w-full object-contain"/>
+      {/* Popular Games Section */}
+      <section className="p-6 md:p-12">
+        <h3 className="text-3xl font-bold mb-6 text-center">Popular Games</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {popularGames.map(game => (
+            <div key={game.id} className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg hover:scale-105 transform transition">
+              <div className="w-full h-48 md:h-56 flex items-center justify-center bg-gray-800">
+                <img src={game.img} alt={game.name} className="max-h-full max-w-full object-contain"/>
+              </div>
+              <div className="p-4 flex flex-col justify-between h-28 md:h-32">
+                <h4 className="text-xl font-semibold">{game.name}</h4>
+                <p className="text-blue-500 font-bold">{game.price}</p>
+                <button className="mt-2 w-full bg-blue-600 hover:bg-blue-700 py-2 rounded font-semibold transition">
+                  Buy Now
+                </button>
+              </div>
             </div>
-            <div className="p-4 flex flex-col justify-between h-28 md:h-32">
-            <h4 className="text-xl font-semibold">{game.name}</h4>
-            <p className="text-blue-500 font-bold">{game.price}</p>
-            <button className="mt-2 w-full bg-blue-600 hover:bg-blue-700 py-2 rounded font-semibold transition">
-                Buy Now
-            </button>
-            </div>
+          ))}
         </div>
-        ))}
-    </div>
-    </section>
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-800 p-6 mt-12 text-center">
